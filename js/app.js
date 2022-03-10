@@ -40,10 +40,13 @@ const switchTab = (id) => {
         document.getElementById( "liked" ).style.display = "grid";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+        document.getElementById( "faq" ).style.display = "none";
+
 
         displayLikedPosts();
     } else {
         document.getElementById( "reported" ).style.display = "grid";
+        document.getElementById( "faq" ).style.display = "none";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
 
