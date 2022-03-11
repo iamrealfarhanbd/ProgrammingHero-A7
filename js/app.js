@@ -15,6 +15,7 @@ const isLiked = (id) => {
     return likedPostsId?.length && !!likedPostsId.includes(id);
 };
 
+// plus => push fix
 const addToLiked = (id) => {
     likedPostsId.push(id); 
     showPosts(posts);
@@ -25,7 +26,7 @@ const reportPost = (id) => {
     const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
     showPosts(remainingPosts);
 };
-
+// "text" => text fix
 const displayContent = (text) => {
     return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
@@ -35,6 +36,8 @@ const switchTab = (id) => {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+        document.getElementById( "faq" ).style.display = "block";
+
         loadPosts();
     } else if (id === "liked") {
         document.getElementById( "liked" ).style.display = "grid";
@@ -54,6 +57,7 @@ const switchTab = (id) => {
     }
 };
 
+// image => userProfile fix
 const createPost = (post) => {
     const image = post.image;
     const userProfile = post.userImage;
@@ -136,6 +140,7 @@ const createPost = (post) => {
       `;
     return div;
 };
+// comments => comments[0] fix
 
 const showPosts = (posts) => {
     const productsContainer = document.getElementById( "posts" );
@@ -146,6 +151,7 @@ const showPosts = (posts) => {
         productsContainer.appendChild(div);
     });
 };
+// like Posts fix
 
 const displayLikedPosts = () => {
   const cleanLikedPosts = document.getElementById( "liked" );
@@ -156,6 +162,7 @@ const displayLikedPosts = () => {
         document.getElementById( "liked" ).appendChild(div);
     });
 };
+// Reported Posts  fix
 
 const displayReportedPosts = () => {
   const cleanreportedPosts = document.getElementById( "reported" );
